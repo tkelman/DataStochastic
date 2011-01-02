@@ -16,10 +16,13 @@ EXTRA_DIST = $(EXAMPLE_FILES) README AUTHORS LICENSE
 
 DISTCLEANFILES = $(EXAMPLE_CLEAN_FILES)
 
-datacoindir = $(prefix)/share/coin/Data/Stochastic
+datacoindir = $(datadir)/coin/Data/Stochastic
 datacoin_DATA = $(EXAMPLE_FILES)
 
-coindocdir = $(prefix)/share/doc/coin/Data/Stochastic
+coindocdir = $(datadir)/coin/doc/Data/Stochastic
 coindoc_DATA = README AUTHORS LICENSE
+
+pkgconfiglibdir = $(libdir)/pkgconfig
+pkgconfiglib_DATA = coindatastochastic.pc
 
 include BuildTools/Makemain.inc

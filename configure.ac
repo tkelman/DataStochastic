@@ -12,7 +12,7 @@
 
 AC_PREREQ(2.59)
 
-AC_INIT([DataStochastic],[1.0trunk],[https://projects.coin-or.org/BuildTools/])
+AC_INIT([DataStochastic],[trunk],[https://projects.coin-or.org/BuildTools/])
 
 AC_COPYRIGHT([
 Copyright 2006 International Business Machines and others.
@@ -29,6 +29,8 @@ AC_CONFIG_SRCDIR(configure.ac)
 # of the directory where configure is run.  The default would be
 # /usr/local.
 AC_PREFIX_DEFAULT([`pwd`])
+
+AC_COIN_PROJECTDIR_INIT(DataStochastic)
 
 #############################################################################
 #     We only need automake to generate Makefiles for the distribution      #
@@ -47,9 +49,12 @@ AC_COIN_EXAMPLE_FILES([*.cor *.stoch *.time])
 #                   Finishing up by writing all the output                   #
 ##############################################################################
 
+ABSBUILDDIR="`pwd`"
+AC_SUBST(ABSBUILDDIR)
+
 # Here list all the files that configure should create (except for the
 # configuration header file)
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile coindatastochastic.pc coindatastochastic-uninstalled.pc])
 
 # Finally, we let configure write all the output...
 AC_COIN_FINALIZE
