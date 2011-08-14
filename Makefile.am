@@ -25,4 +25,9 @@ coindoc_DATA = README AUTHORS LICENSE
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coindatastochastic.pc
 
+test:
+	@echo "No test available."
+	
+.PHONY: test
+
 include BuildTools/Makemain.inc

@@ -521,6 +521,11 @@ uninstall-am: uninstall-coindocDATA uninstall-datacoinDATA \
 	uninstall-pkgconfiglibDATA
 
 
+test:
+	@echo "No test available."
+
+.PHONY: test
+
 install-doc: $(DocFiles)
 	test -z "$(DocInstallDir)" || $(mkdir_p) "$(DESTDIR)$(DocInstallDir)"
 	for file in $(DocFiles); do \
